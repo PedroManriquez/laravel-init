@@ -14,6 +14,7 @@ class CreatePeliculasTable extends Migration
     public function up()
     {
         Schema::create('peliculas', function (Blueprint $table) {
+            // se definen las respectivas columnas de la tabla
             $table->increments('id_pelicula');
             $table->date('anno_estreno');
             $table->string('nombre');
