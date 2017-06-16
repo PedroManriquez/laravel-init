@@ -27,7 +27,7 @@ class PeliculaRequest extends FormRequest
         return [
             'nombre' => 'required',
             'anno_estreno' => 'required|date',
-            'genero' => 'required|numeric',
+            'id_genero' => 'required|numeric',
             'director' => 'required',
             'sinopsis' => 'required'
         ];
