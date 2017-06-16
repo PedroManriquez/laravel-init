@@ -17,4 +17,12 @@ Route::get('user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::resource('peliculas', 'Api\PeliculaApiController');
+Route::group(['middleware' => ['cors']], function () {
+
+	Route::resource('peliculas', 'Api\PeliculaApiController');
+
+});
+
+Route::group(['middleware' => 'cors'], function () {
+	Route::post('/auth_login', 'ApiAuthController@userAuth');
+});
